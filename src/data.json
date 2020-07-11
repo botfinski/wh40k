@@ -4,16 +4,60 @@
 			"name": "Primaris Space Marines",
 			"units": {
 				"intercessors": {
-					"name": "Intercessors"
+					"name": "Intercessors",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				},
 				"inceptors": {
-					"name": "Inceptors"
+					"name": "Inceptors",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				},
 				"hellblasters": {
-					"name": "Hellblasters"
+					"name": "Hellblasters",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				},
 				"primarisCaptain": {
-					"name": "Primaris Captain"
+					"name": "Primaris Captain",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				}
 			}
 		}
@@ -23,16 +67,60 @@
 			"name": "Death Guard",
 			"units": {
 				"lordContagion": {
-					"name": "Lord of Contagion"
+					"name": "Lord of Contagion",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				},
 				"plagueMarines": {
-					"name": "Plague Marines"
+					"name": "Plague Marines",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				},
 				"foetidDrone": {
-					"name": "Foetid Bloat-drone"
+					"name": "Foetid Bloat-drone",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				},
 				"poxwalkers": {
-					"name": "Poxwalkers"
+					"name": "Poxwalkers",
+					"stats": {
+						"movement": "3",
+						"weaponSkill": "3",
+						"ballisticSkill": "3",
+						"strength": "3",
+						"toughness": "3",
+						"wounds": "3",
+						"attacks": "3",
+						"leadership": "3",
+						"save": "3"
+					}
 				}
 			}
 		}
