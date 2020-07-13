@@ -1,0 +1,196 @@
+[
+	{
+		"spacemMarines": {
+			"name": "Primaris Space Marines",
+			"units": {
+				"intercessors": {
+					"name": "Intercessor Squad",
+					"profiles": [
+						{
+							"name": "Intercessor",
+							"stats": {
+								"movement": "6",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "4",
+								"wounds": "2",
+								"attacks": "2",
+								"leadership": "7",
+								"save": "3+"
+							}
+						},
+						{
+							"name": "Intercessor Sergeant",
+							"stats": {
+								"movement": "6",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "4",
+								"wounds": "2",
+								"attacks": "3",
+								"leadership": "8",
+								"save": "3+"
+							}
+						}
+					]
+				},
+				"inceptors": {
+					"name": "Inceptor Squad",
+					"profiles": [
+						{
+							"name": "Inceptor",
+							"stats": {
+								"movement": "10",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "5",
+								"wounds": "2",
+								"attacks": "2",
+								"leadership": "7",
+								"save": "3+"
+							}
+						},
+						{
+							"name": "Inceptor Sergeant",
+							"stats": {
+								"movement": "10",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "5",
+								"wounds": "2",
+								"attacks": "3",
+								"leadership": "8",
+								"save": "3+"
+							}
+						}
+					]
+				},
+				"hellblasters": {
+					"name": "Hellblaster Squad",
+					"profiles": [
+						{
+							"name": "Hellblasters",
+							"stats": {
+								"movement": "3",
+								"weaponSkill": "3",
+								"ballisticSkill": "3",
+								"strength": "3",
+								"toughness": "3",
+								"wounds": "3",
+								"attacks": "3",
+								"leadership": "3",
+								"save": "3"
+							}
+						}
+					]
+				},
+				"primarisCaptain": {
+					"name": "",
+					"profiles": [
+						{
+							"name": "Primaris Captain",
+							"stats": {
+								"movement": "3",
+								"weaponSkill": "3",
+								"ballisticSkill": "3",
+								"strength": "3",
+								"toughness": "3",
+								"wounds": "3",
+								"attacks": "3",
+								"leadership": "3",
+								"save": "3"
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	{
+		"deathGuard": {
+			"name": "Death Guard",
+			"units": {
+				"lordContagion": {
+					"name": "Lord of Contagion",
+					"profiles": [
+						{
+							"name": "Lord of Contagion",
+							"stats": {
+								"movement": "3",
+								"weaponSkill": "3",
+								"ballisticSkill": "3",
+								"strength": "3",
+								"toughness": "3",
+								"wounds": "3",
+								"attacks": "3",
+								"leadership": "3",
+								"save": "3"
+							}
+						}
+					]
+				},
+				"plagueMarines": {
+					"name": "Plague Marines",
+					"profiles": [
+						{
+							"name": "Plague Marines",
+							"stats": {
+								"movement": "3",
+								"weaponSkill": "3",
+								"ballisticSkill": "3",
+								"strength": "3",
+								"toughness": "3",
+								"wounds": "3",
+								"attacks": "3",
+								"leadership": "3",
+								"save": "3"
+							}
+						}
+					]
+				},
+				"foetidDrone": {
+					"name": "Foetid Bloat-drone",
+					"profiles": [
+						{
+							"name": "Foetid Bloat-drone",
+							"stats": {
+								"movement": "3",
+								"weaponSkill": "3",
+								"ballisticSkill": "3",
+								"strength": "3",
+								"toughness": "3",
+								"wounds": "3",
+								"attacks": "3",
+								"leadership": "3",
+								"save": "3"
+							}
+						}
+					]
+				},
+				"poxwalkers": {
+					"name": "Poxwalkers",
+					"profiles": [
+						{
+							"name": "Poxwalkers",
+							"stats": {
+								"movement": "4",
+								"weaponSkill": "5+",
+								"ballisticSkill": "6+",
+								"strength": "3",
+								"toughness": "3",
+								"wounds": "1",
+								"attacks": "2",
+								"leadership": "4",
+								"save": "7+"
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+]

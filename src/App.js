@@ -1,47 +1,80 @@
-import React, { useState, useEffect } from 'react';
-import json from './data.json'
+import React, { useState } from 'react';
+import armyData from './army-data.json'
+import dict from './dictionary-data.json';
+import './index.scss'
 
 function App() {
+	const [data] = useState(armyData);
+	const [dictionary] = useState(dict[0].dictionary);
 
-	const [data] = useState(json);
-	// console.log(data)
+	const Profile = ({ profile }) => {
+		return (
+			<>
+				<tr>
+					<td>
+						{profile.name}
+					</td>
 
-	const Unit = ({ unit }) => {
-		for (const prop in unit) {
-			console.log(typeof unit)
-			return (
-				<p key={unit}>unit</p>
-			)
-		}
+					{
+						Object.values(profile.stats).map((stat, i) => <td key={i} className='stat-nr'>{stat}</td>)
+					}
+				</tr>
+			</>
+		)
 	}
 
+	const Profiles = ({ profiles }) => {
+		return (
+			<>
+				{
+					profiles.map((profile, i) => <Profile key={i} profile={profile} />)
+				}
+			</>
+		)
+	}
+
+
 	const Units = ({ units }) => {
-		for (const prop in units) {
-			// console.log(units[prop])
-			return (
-				<ul>
-					<li>a</li>
-				</ul>
-			)
-		}
+		// console.log(Object.values(units).map)
+		let names = Object.values(units).map(unit => unit.name)
+
+		let profiles = Object.values(units).map(val => val.profiles)
+
+
+		return (
+			<>
+				<h3>Units</h3>
+				{
+					names.map(name => <h4>{name}</h4>)
+				}
+				{
+					profiles.map((profiles, i) => (
+						<>
+							<h5>{profiles.name}</h5>
+							<table key={i}>
+								<tbody>
+									<Profiles profiles={profiles} />
+								</tbody>
+							</table>
+						</>
+					))
+				}
+			</>
+		)
 	}
 
 	const army = (
 		data.map((army, i) => {
 			for (const prop in army) {
-				// console.log(army[prop])
 				return (
 					<div key={i}>
-						<p>{army[prop].name}</p>
-						<div>Units</div>
-						<Units unit={army[prop].units} />
+						<h2>{army[prop].name}</h2>
+						<Units units={army[prop].units} />
 					</div>
 				)
 			}
 		})
 	);
-
-
 
 	return (
 		<>

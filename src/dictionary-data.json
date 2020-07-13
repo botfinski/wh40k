@@ -1,0 +1,17 @@
+[
+	{
+		"dictionary": {
+			"stats": {
+				"movement": "Movement",
+				"weaponSkill": "Weapon Skill",
+				"ballisticSkill": "Ballistic Skill",
+				"strength": "Strength",
+				"toughness": "Toughness",
+				"wounds": "Wounds",
+				"attacks": "Attacks",
+				"leadership": "Leadership",
+				"save": "Save"
+			}
+		}
+	}
+]
