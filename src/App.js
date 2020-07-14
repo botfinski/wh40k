@@ -11,9 +11,7 @@ function App() {
 		return (
 			<>
 				<tr>
-					<td>
-						{profile.name}
-					</td>
+					<td>{profile.name}</td>
 
 					{
 						Object.values(profile.stats).map((stat, i) => <td key={i} className='stat-nr'>{stat}</td>)
@@ -33,31 +31,30 @@ function App() {
 		)
 	}
 
-
 	const Units = ({ units }) => {
-		// console.log(Object.values(units).map)
-		let names = Object.values(units).map(unit => unit.name)
-
-		let profiles = Object.values(units).map(val => val.profiles)
-
-
+		console.log(units)
 		return (
 			<>
 				<h3>Units</h3>
 				{
-					names.map(name => <h4>{name}</h4>)
-				}
-				{
-					profiles.map((profiles, i) => (
-						<>
-							<h5>{profiles.name}</h5>
-							<table key={i}>
-								<tbody>
-									<Profiles profiles={profiles} />
-								</tbody>
-							</table>
-						</>
-					))
+					Object.keys(units).map(unit => {
+						return (
+							<div key={unit}>
+								<h4>{units[unit].name}</h4>
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											{
+												Object.values(dictionary.stats).map(stat => <td key={stat}>{stat}</td>)
+											}
+										</tr>
+										<Profiles profiles={units[unit].profiles} />
+									</tbody>
+								</table>
+							</div>
+						)
+					})
 				}
 			</>
 		)

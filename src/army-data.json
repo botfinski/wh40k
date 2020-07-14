@@ -34,7 +34,9 @@
 								"save": "3+"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				},
 				"inceptors": {
 					"name": "Inceptor Squad",
@@ -67,7 +69,9 @@
 								"save": "3+"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				},
 				"hellblasters": {
 					"name": "Hellblaster Squad",
@@ -86,13 +90,15 @@
 								"save": "3"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				},
-				"primarisCaptain": {
-					"name": "",
+				"captainInGravisArmour": {
+					"name": "Captain In Gravis Armour",
 					"profiles": [
 						{
-							"name": "Primaris Captain",
+							"name": "Captain In Gravis Armour",
 							"stats": {
 								"movement": "3",
 								"weaponSkill": "3",
@@ -105,7 +111,9 @@
 								"save": "3"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				}
 			}
 		}
@@ -114,7 +122,7 @@
 		"deathGuard": {
 			"name": "Death Guard",
 			"units": {
-				"lordContagion": {
+				"lordOfContagion": {
 					"name": "Lord of Contagion",
 					"profiles": [
 						{
@@ -131,7 +139,23 @@
 								"save": "3"
 							}
 						}
-					]
+					],
+					"weapons": [
+						{
+							"name": "Plaguereaper",
+							"stats": {
+								"range": "Melee",
+								"type": "Melee",
+								"strength": "+2",
+								"armourPenetration": "-3",
+								"damage": "3",
+								"abilities": [
+									"Plague Weapon"
+								]
+							}
+						}
+					],
+					"abilities": []
 				},
 				"plagueMarines": {
 					"name": "Plague Marines",
@@ -150,7 +174,9 @@
 								"save": "3"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				},
 				"foetidDrone": {
 					"name": "Foetid Bloat-drone",
@@ -169,7 +195,9 @@
 								"save": "3"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				},
 				"poxwalkers": {
 					"name": "Poxwalkers",
@@ -188,7 +216,9 @@
 								"save": "7+"
 							}
 						}
-					]
+					],
+					"weapons": [],
+					"abilities": []
 				}
 			}
 		}
