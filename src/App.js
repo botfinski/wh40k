@@ -31,15 +31,54 @@ function App() {
 		)
 	}
 
+	const Weapon = ({ weaponData }) => {
+		console.log(weaponData)
+		return (
+			<td>weapon</td>
+		)
+	}
+
+	const Weapons = ({ weaponsData }) => {
+		// weaponsData.map(weapons => {
+		// 	Object.values(weapons).map(weapon => {
+		// 		console.log(weapon.name)
+		// 		console.log(weapon.stats)
+		// 	})
+		// })
+
+		return (
+			<table>
+				<tbody>
+					<tr>
+						<td colSpan='3'>weapons</td>
+					</tr>
+					<tr>
+						{
+							weaponsData.map(weapons => {
+								return (
+									<Weapon weaponData={weapons} />
+								)
+							})
+						}
+					</tr>
+				</tbody>
+			</table>
+
+		)
+	}
+
 	const Units = ({ units }) => {
-		console.log(units)
+		let weapons = []
+		Object.values(units).map(unit => weapons.push(unit.weapons))
+
+		// console.log(weapons)
 		return (
 			<>
 				<h3>Units</h3>
 				{
 					Object.keys(units).map(unit => {
 						return (
-							<div key={unit}>
+							<div key={unit} style={{ overflowX: "scroll" }}>
 								<h4>{units[unit].name}</h4>
 								<table>
 									<tbody>
@@ -52,6 +91,7 @@ function App() {
 										<Profiles profiles={units[unit].profiles} />
 									</tbody>
 								</table>
+								<Weapons weaponsData={weapons} />
 							</div>
 						)
 					})
