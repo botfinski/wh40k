@@ -11,6 +11,14 @@
 				"attacks": "Attacks",
 				"leadership": "Leadership",
 				"save": "Save"
+			},
+			"weaponStats": {
+				"range": "Range",
+				"type": "Type",
+				"strength": "Strength",
+				"armourPenetration": "Armour Penetration",
+				"damage": "Damage",
+				"abilities": "Abilities"
 			}
 		}
 	}

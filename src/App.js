@@ -1,121 +1,90 @@
 import React, { useState } from 'react';
-import armyData from './army-data.json'
+import data from './army-data.json'
 import dict from './dictionary-data.json';
 import './index.scss'
 
 function App() {
-	const [data] = useState(armyData);
+	const [armiesData] = useState(data);
 	const [dictionary] = useState(dict[0].dictionary);
+
+	const x = () => {
+		return (
+			<p>x</p>
+		)
+	}
+
+	const Stat = ({ type, value }) => {
+		if (type === 'movement') {
+			return (
+				<td>{value}"</td>
+			)
+		} else {
+			return (
+				<td>{value}</td>
+			)
+		}
+	}
 
 	const Profile = ({ profile }) => {
 		return (
-			<>
-				<tr>
-					<td>{profile.name}</td>
+			<tr>
+				<td>{profile.name}</td>
+				{Object.entries(profile.stats).map(stat => <Stat type={stat[0]} value={stat[1]} />)}
+			</tr>
 
-					{
-						Object.values(profile.stats).map((stat, i) => <td key={i} className='stat-nr'>{stat}</td>)
-					}
-				</tr>
-			</>
 		)
 	}
 
-	const Profiles = ({ profiles }) => {
+	const Unit = ({ unit }) => {
 		return (
-			<>
-				{
-					profiles.map((profile, i) => <Profile key={i} profile={profile} />)
-				}
-			</>
-		)
-	}
-
-	const Weapon = ({ weaponData }) => {
-		console.log(weaponData)
-		return (
-			<td>weapon</td>
-		)
-	}
-
-	const Weapons = ({ weaponsData }) => {
-		// weaponsData.map(weapons => {
-		// 	Object.values(weapons).map(weapon => {
-		// 		console.log(weapon.name)
-		// 		console.log(weapon.stats)
-		// 	})
-		// })
-
-		return (
-			<table>
-				<tbody>
-					<tr>
-						<td colSpan='3'>weapons</td>
-					</tr>
-					<tr>
-						{
-							weaponsData.map(weapons => {
-								return (
-									<Weapon weaponData={weapons} />
-								)
-							})
-						}
-					</tr>
-				</tbody>
-			</table>
-
+			<div>
+				<h4>{unit.name}</h4>
+				<table>
+					<tbody>
+						<tr>
+							<td></td>
+							{
+								Object.values(dictionary.stats).map(stat => <td key={stat}>{stat}</td>)
+							}
+						</tr>
+						{Object.values(unit.profiles).map(profile => <Profile profile={profile} />)}
+					</tbody>
+				</table>
+			</div>
 		)
 	}
 
 	const Units = ({ units }) => {
-		let weapons = []
-		Object.values(units).map(unit => weapons.push(unit.weapons))
-
-		// console.log(weapons)
 		return (
 			<>
 				<h3>Units</h3>
-				{
-					Object.keys(units).map(unit => {
-						return (
-							<div key={unit} style={{ overflowX: "scroll" }}>
-								<h4>{units[unit].name}</h4>
-								<table>
-									<tbody>
-										<tr>
-											<td></td>
-											{
-												Object.values(dictionary.stats).map(stat => <td key={stat}>{stat}</td>)
-											}
-										</tr>
-										<Profiles profiles={units[unit].profiles} />
-									</tbody>
-								</table>
-								<Weapons weaponsData={weapons} />
-							</div>
-						)
-					})
-				}
+				{Object.values(units).map(unit => <Unit unit={unit} />)}
 			</>
 		)
 	}
 
-	const army = (
-		data.map((army, i) => {
-			for (const prop in army) {
+	const Army = ({ army }) => {
+		return (
+			Object.values(army).map(army => {
 				return (
-					<div key={i}>
-						<h2>{army[prop].name}</h2>
-						<Units units={army[prop].units} />
+					<div>
+						<h2>{army.name}</h2>
+						<Units units={army.units} />
 					</div>
 				)
-			}
-		})
-	);
+			})
+		)
+	}
+
+	const Armies = ({ armies }) => {
+		return (
+			armies.map(army => <Army army={army} />)
+		)
+	}
 
 	return (
 		<>
-			{army}
+			<Armies armies={armiesData} />
 		</>
 	);
 }
