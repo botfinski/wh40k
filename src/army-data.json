@@ -35,8 +35,55 @@
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Bolt Pistol",
+							"stats": {
+								"range": "12",
+								"type": "Pistol 1",
+								"strength": "4",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Bolt Rifle",
+							"stats": {
+								"range": "30",
+								"type": "Rapid Fire 3",
+								"strength": "4",
+								"armourPenetration": "-1",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Frag Grenade",
+							"stats": {
+								"range": "6",
+								"type": "Grenade D6",
+								"strength": "3",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Krak Grenade",
+							"stats": {
+								"range": "6",
+								"type": "Grenade 1",
+								"strength": "6",
+								"armourPenetration": "-1",
+								"damage": "D3",
+								"abilities": []
+							}
+						}
+					],
+					"abilities": [
+						"And They Shall Know No Fear"
+					]
 				},
 				"inceptors": {
 					"name": "Inceptor Squad",

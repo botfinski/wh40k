@@ -13,6 +13,27 @@ function App() {
 		)
 	}
 
+	const WeaponStat = ({stat}) => {
+		if(stat[0] === 'range') {
+			return(
+				<td>{stat[1]}"</td>
+			)
+		} else {
+			return (
+				<td>{stat[1]}</td>
+			)
+		}
+	}
+
+	const Weapon = ({weapon}) => {
+		return (
+			<tr>
+				<td>{weapon.name}</td>
+				{Object.entries(weapon.stats).map(weaponStat => <WeaponStat key={weaponStat[0] + weaponStat[1]} stat={weaponStat} />)}
+			</tr>
+		)
+	}
+
 	const Stat = ({ type, value }) => {
 		if (type === 'movement') {
 			return (
@@ -29,27 +50,41 @@ function App() {
 		return (
 			<tr>
 				<td>{profile.name}</td>
-				{Object.entries(profile.stats).map(stat => <Stat type={stat[0]} value={stat[1]} />)}
+				{Object.entries(profile.stats).map(stat => <Stat key={stat} type={stat[0]} value={stat[1]} />)}
 			</tr>
-
 		)
 	}
 
 	const Unit = ({ unit }) => {
+		console.log(unit.abilities)
 		return (
-			<div>
+			<div style={{border:'2px solid white', margin:'30px 0'}}>
 				<h4>{unit.name}</h4>
 				<table>
 					<tbody>
 						<tr>
 							<td></td>
-							{
-								Object.values(dictionary.stats).map(stat => <td key={stat}>{stat}</td>)
-							}
+							{Object.values(dictionary.stats).map(stat => <td key={stat}>{stat}</td>)}
 						</tr>
-						{Object.values(unit.profiles).map(profile => <Profile profile={profile} />)}
+						{Object.values(unit.profiles).map(profile => <Profile key={profile.name} profile={profile} />)}
 					</tbody>
 				</table>
+
+				<h4>Weapons</h4>
+				<table>
+					<tbody>
+						<tr>
+							<td></td>
+							{Object.values(dictionary.weaponStats).map(stat => <td key={stat}>{stat}</td>)}
+						</tr>
+						{Object.values(unit.weapons).map(weapon => <Weapon key={weapon.name} weapon={weapon} />)}
+					</tbody>
+				</table>
+
+				<h4>Abilites</h4>
+				<ul>
+					{unit.abilities.map(abilit => <li key={abilit}>{abilit}</li>)}
+				</ul>
 			</div>
 		)
 	}
@@ -58,7 +93,7 @@ function App() {
 		return (
 			<>
 				<h3>Units</h3>
-				{Object.values(units).map(unit => <Unit unit={unit} />)}
+				{Object.values(units).map(unit => <Unit key={unit.name} unit={unit} />)}
 			</>
 		)
 	}
@@ -67,7 +102,7 @@ function App() {
 		return (
 			Object.values(army).map(army => {
 				return (
-					<div>
+					<div key={army}>
 						<h2>{army.name}</h2>
 						<Units units={army.units} />
 					</div>
@@ -78,7 +113,7 @@ function App() {
 
 	const Armies = ({ armies }) => {
 		return (
-			armies.map(army => <Army army={army} />)
+			armies.map((army,i) => <Army key={i} army={army} />)
 		)
 	}
 
