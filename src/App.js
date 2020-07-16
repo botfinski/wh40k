@@ -15,9 +15,15 @@ function App() {
 
 	const WeaponStat = ({stat}) => {
 		if(stat[0] === 'range') {
-			return(
-				<td>{stat[1]}"</td>
-			)
+			if(stat[1] !== 'Melee') {
+				return(
+					<td>{stat[1]}"</td>
+				)
+			} else {
+				return(
+					<td>{stat[1]}</td>
+				)
+			}
 		} else {
 			return (
 				<td>{stat[1]}</td>
@@ -56,14 +62,14 @@ function App() {
 	}
 
 	const Unit = ({ unit }) => {
-		console.log(unit.abilities)
+		// console.log(unit.abilities)
 		return (
-			<div style={{border:'2px solid white', margin:'30px 0'}}>
+			<div className='Unit'>
 				<h4>{unit.name}</h4>
 				<table>
 					<tbody>
 						<tr>
-							<td></td>
+							<td className='no-border'></td>
 							{Object.values(dictionary.stats).map(stat => <td key={stat}>{stat}</td>)}
 						</tr>
 						{Object.values(unit.profiles).map(profile => <Profile key={profile.name} profile={profile} />)}
@@ -74,7 +80,7 @@ function App() {
 				<table>
 					<tbody>
 						<tr>
-							<td></td>
+							<td className='no-border'></td>
 							{Object.values(dictionary.weaponStats).map(stat => <td key={stat}>{stat}</td>)}
 						</tr>
 						{Object.values(unit.weapons).map(weapon => <Weapon key={weapon.name} weapon={weapon} />)}
@@ -118,9 +124,9 @@ function App() {
 	}
 
 	return (
-		<>
+		<div className='Armies'>
 			<Armies armies={armiesData} />
-		</>
+		</div>
 	);
 }
 
