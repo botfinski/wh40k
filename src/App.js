@@ -24,6 +24,10 @@ function App() {
 					<td>{stat[1]}</td>
 				)
 			}
+		} else if(stat[0] === 'abilities') {
+			return(
+				<td className='abilities'>{stat[1]}</td>
+			)
 		} else {
 			return (
 				<td>{stat[1]}</td>

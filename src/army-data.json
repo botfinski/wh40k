@@ -117,29 +117,108 @@
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Assault Bolter",
+							"stats": {
+								"range": "18",
+								"type": "Assault 3",
+								"strength": "5",
+								"armourPenetration": "-1",
+								"damage": "1",
+								"abilities": []
+							}
+						}
+					],
+					"abilities": [
+						"And They Shall Know No Fear",
+						"Heavy Jump Packs",
+						"Meteoric Descent"
+					]
 				},
 				"hellblasters": {
 					"name": "Hellblaster Squad",
 					"profiles": [
 						{
-							"name": "Hellblasters",
+							"name": "Hellblaster",
 							"stats": {
-								"movement": "3",
-								"weaponSkill": "3",
-								"ballisticSkill": "3",
-								"strength": "3",
-								"toughness": "3",
-								"wounds": "3",
+								"movement": "6",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "4",
+								"wounds": "2",
+								"attacks": "2",
+								"leadership": "7",
+								"save": "3+"
+							}
+						},
+						{
+							"name": "Hellblaster Sergeant",
+							"stats": {
+								"movement": "6",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "4",
+								"wounds": "2",
 								"attacks": "3",
-								"leadership": "3",
-								"save": "3"
+								"leadership": "8",
+								"save": "3+"
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Plasma incinerator",
+							"stats": {
+								"range": "30",
+								"type": "Rapid Fire 1",
+								"strength": "7",
+								"armourPenetration": "-4",
+								"damage": "1",
+								"abilities": [
+									"Each ... tbd"
+								]
+							}
+						},
+						{
+							"name": "Bolt Pistol",
+							"stats": {
+								"range": "12",
+								"type": "Pistol 1",
+								"strength": "4",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Frag Grenade",
+							"stats": {
+								"range": "6",
+								"type": "Grenade D6",
+								"strength": "3",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Krak Grenade",
+							"stats": {
+								"range": "6",
+								"type": "Grenade 1",
+								"strength": "6",
+								"armourPenetration": "-1",
+								"damage": "D3",
+								"abilities": []
+							}
+						}
+					],
+					"abilities": [
+						"And They Shall Know No Fear"
+					]
 				},
 				"captainInGravisArmour": {
 					"name": "Captain In Gravis Armour",
@@ -147,20 +226,60 @@
 						{
 							"name": "Captain In Gravis Armour",
 							"stats": {
-								"movement": "3",
-								"weaponSkill": "3",
-								"ballisticSkill": "3",
-								"strength": "3",
-								"toughness": "3",
-								"wounds": "3",
-								"attacks": "3",
-								"leadership": "3",
-								"save": "3"
+								"movement": "5",
+								"weaponSkill": "2+",
+								"ballisticSkill": "2+",
+								"strength": "4",
+								"toughness": "5",
+								"wounds": "6",
+								"attacks": "5",
+								"leadership": "9",
+								"save": "3+"
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Boltstotm Gauntlet (ranged)",
+							"stats": {
+								"range": "12",
+								"type": "Pistol 3",
+								"strength": "4",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Boltstotm Gauntlet (melee)",
+							"stats": {
+								"range": "Melee",
+								"type": "Melee",
+								"strength": "x2",
+								"armourPenetration": "-3",
+								"damage": "D3",
+								"abilities": [
+									"If a model is making a close combat attack with a boltstorm gauntlet, you must subtract 1 from the hit roll"
+								]
+							}
+						},
+						{
+							"name": "Master-crafted power sword",
+							"stats": {
+								"range": "Melee",
+								"type": "Melee",
+								"strength": "User",
+								"armourPenetration": "-3",
+								"damage": "2",
+								"abilities": []
+							}
+						}
+					],
+					"abilities": [
+						"And They Shall Know No Fear",
+						"Iron Halo",
+						"Rites of Battle"
+					]
 				}
 			}
 		}
@@ -175,15 +294,15 @@
 						{
 							"name": "Lord of Contagion",
 							"stats": {
-								"movement": "3",
-								"weaponSkill": "3",
-								"ballisticSkill": "3",
-								"strength": "3",
-								"toughness": "3",
-								"wounds": "3",
-								"attacks": "3",
-								"leadership": "3",
-								"save": "3"
+								"movement": "4",
+								"weaponSkill": "2+",
+								"ballisticSkill": "2+",
+								"strength": "4",
+								"toughness": "5",
+								"wounds": "6",
+								"attacks": "4",
+								"leadership": "9",
+								"save": "2+"
 							}
 						}
 					],
@@ -202,7 +321,12 @@
 							}
 						}
 					],
-					"abilities": []
+					"abilities": [
+						"Disgustingly Resilent",
+						"Nurgle's Gift",
+						"Cataphractii Armour",
+						"Teleport Strike"
+					]
 				},
 				"plagueMarines": {
 					"name": "Plague Marines",
@@ -210,20 +334,84 @@
 						{
 							"name": "Plague Marines",
 							"stats": {
-								"movement": "3",
-								"weaponSkill": "3",
-								"ballisticSkill": "3",
-								"strength": "3",
-								"toughness": "3",
-								"wounds": "3",
-								"attacks": "3",
-								"leadership": "3",
-								"save": "3"
+								"movement": "5",
+								"weaponSkill": "3+",
+								"ballisticSkill": "3+",
+								"strength": "4",
+								"toughness": "5",
+								"wounds": "1",
+								"attacks": "1",
+								"leadership": "7",
+								"save": "3+"
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Boltgun",
+							"stats": {
+								"range": "24",
+								"type": "Rapid Fire 1",
+								"strength": "4",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						},
+						{
+							"name": "Plasma gun",
+							"stats": {
+								"range": "24",
+								"type": "Rapid Fire 1",
+								"strength": "7",
+								"armourPenetration": "-3",
+								"damage": "1",
+								"abilities": [
+									"Each ... tbd"
+								]
+							}
+						},
+						{
+							"name": "Plague knife",
+							"stats": {
+								"range": "Melee",
+								"type": "Melee",
+								"strength": "User",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": [
+									"Plague Weapon"
+								]
+							}
+						},
+						{
+							"name": "Blight grenade",
+							"stats": {
+								"range": "6",
+								"type": "Grenade D6",
+								"strength": "3",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": [
+									"Plague Weapon"
+								]
+							}
+						},
+						{
+							"name": "Krak grenade",
+							"stats": {
+								"range": "6",
+								"type": "Grenade 1",
+								"strength": "6",
+								"armourPenetration": "-1",
+								"damage": "D3",
+								"abilities": []
+							}
+						}
+					],
+					"abilities": [
+						"Disgustingly Resilent"
+					]
 				},
 				"foetidDrone": {
 					"name": "Foetid Bloat-drone",
@@ -231,20 +419,51 @@
 						{
 							"name": "Foetid Bloat-drone",
 							"stats": {
-								"movement": "3",
-								"weaponSkill": "3",
-								"ballisticSkill": "3",
-								"strength": "3",
-								"toughness": "3",
-								"wounds": "3",
-								"attacks": "3",
-								"leadership": "3",
-								"save": "3"
+								"movement": "*",
+								"weaponSkill": "4+",
+								"ballisticSkill": "4+",
+								"strength": "*",
+								"toughness": "7",
+								"wounds": "10",
+								"attacks": "*",
+								"leadership": "8",
+								"save": "3+"
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Plaguespitter",
+							"stats": {
+								"range": "9",
+								"type": "Assault D6",
+								"strength": "User",
+								"armourPenetration": "-1",
+								"damage": "1",
+								"abilities": [
+									"Plague Weapon"
+								]
+							}
+						},
+						{
+							"name": "Plague probe",
+							"stats": {
+								"range": "Melee",
+								"type": "Melee",
+								"strength": "User",
+								"armourPenetration": "-2",
+								"damage": "D3",
+								"abilities": [
+									"Plague Weapon"
+								]
+							}
+						}
+					],
+					"abilities": [
+						"Disgustingly Resilent",
+						"Putrid Explosion",
+						"Daemonic"
+					]
 				},
 				"poxwalkers": {
 					"name": "Poxwalkers",
@@ -264,8 +483,25 @@
 							}
 						}
 					],
-					"weapons": [],
-					"abilities": []
+					"weapons": [
+						{
+							"name": "Improvised weapon",
+							"stats": {
+								"range": "Melee",
+								"type": "Melee",
+								"strength": "User",
+								"armourPenetration": "0",
+								"damage": "1",
+								"abilities": []
+							}
+						}
+					],
+					"abilities": [
+						"Disgustingly Resilent",
+						"Curse of the Walking Pox",
+						"Mindless",
+						"Diseased Horde"
+					]
 				}
 			}
 		}
