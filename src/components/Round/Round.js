@@ -1,81 +1,36 @@
 import React, { useState } from 'react';
 import './Round.scss';
-import SwiperCore, { Navigation, Parallax } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
-// import 'swiper/components/parallax/parallax.scss';
+import phasesJson from '../../phase-data.json';
+import PhaseControls from '../PhaseControls/PhaseControls'
 
-SwiperCore.use([Navigation, Parallax]);
-
-const Round = (props) => {
-	const [phases] = useState(['Command', 'Movement', 'Psychic', 'Shooting', 'Charge', 'Fight', 'Morale']);
+const Round = () => {
+	const [phasesData] = useState(phasesJson)
 	const [activePhaseIndex, setPhase] = useState(0);
 
+	// console.log(phasesData.length)
+
 	const Phase = ({ phase }) => {
+		console.log(Object.values(phase))
 		return (
-			// <div className='Phase'>
-			// 	{phase}
-			// </div>
-			<SwiperSlide className='Phase'>{phase}</SwiperSlide>
-		)
-	}
-
-	const Phases = ({ phases }) => {
-		return (
-			phases.map((phase) => <Phase phase={phase} />)
-		)
-	}
-
-	const Controls = ({ activePhaseName }) => {
-		let disabled = (phases.length - 1) - activePhaseIndex;
-
-		return (
-			<div className='Controls'>
-				<button
-					disabled={disabled === phases.length - 1 ? true : false}
-					onClick={() => setPhase(activePhaseIndex - 1)}
-				>
-					&#8249;
-				</button>
-
-				{activePhaseName}
-
-				<button
-					onClick={() => setPhase(activePhaseIndex + 1)}
-					disabled={disabled === 0 ? true : false}
-				>
-					&#8250;
-				</button>
+			<div className='Phase'>
+				{Object.values(phase).map(phase => <p>{phase.name}</p>)}
 			</div>
 		)
-	}
-
-	const swiperConfig = {
-		speed: 600,
-		parallax: true,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		}
 	}
 
 	return (
-		<>
-			<div className='Layout'>
-				{/* <div className='Round'> */}
-				<Swiper {...swiperConfig} >
-					{/* <Phases phases={phases} /> */}
-					{
-						phases.map((phase) => <SwiperSlide>{phase}</SwiperSlide>)
-					}
-				</Swiper>
-				<Controls activePhaseName={phases[activePhaseIndex]} />
-			</div>
-		</>
+		<div className='Round'>
+			<Phase
+				phase={phasesData[activePhaseIndex]}
+				activePhaseIndex={activePhaseIndex}
+			/>
+			<PhaseControls
+				activePhaseIndex={activePhaseIndex}
+				phasesLength={phasesData.length}
+				next={() => setPhase(activePhaseIndex + 1)}
+				prev={() => setPhase(activePhaseIndex - 1)}
+			/>
+		</div>
 	);
 };
 

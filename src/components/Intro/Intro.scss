@@ -1,0 +1,22 @@
+@import '../../css/variables.scss';
+
+.Intro {
+	// justify-content: space-evenly;
+	// flex-flow: column wrap;
+	// align-items: center;
+
+	// & > * {
+	// 	outline: 1px solid greenyellow;
+	// }
+
+	.Input {
+		width: 100%;
+		display: flex;
+    flex-flow: column wrap;
+		align-items: center;
+
+		input {
+			padding: $gutterSize;
+		}
+	}
+}

@@ -1,18 +1,14 @@
-.Layout {
-	font-family: 'Oxanium', cursive;
-}
-
 .Round {
 	background: darkcyan;
-	display: flex;
-	flex-flow: column wrap;
-	width: 100vw;
-	height: 100vh;
-	justify-content: space-between;
-	scroll-snap-type: x mandatory;
-	-webkit-overflow-scrolling: touch;
-	overflow-x: scroll;
-	position: relative;
+	// display: flex;
+	// flex-flow: column wrap;
+	// width: 100vw;
+	// height: 100vh;
+	// justify-content: space-between;
+	// scroll-snap-type: x mandatory;
+	// -webkit-overflow-scrolling: touch;
+	// overflow-x: scroll;
+	// position: relative;
 
 
 	// div {
@@ -20,36 +16,12 @@
 	// }
 
 	.Phase {
-		min-width: 100vw;
-		height: 100vh;
-		scroll-snap-align: start;
-		text-align: center;
-		position: relative;
-		background: darkorchid;
+		// min-width: 100vw;
+		// height: 100vh;
+		// scroll-snap-align: start;
+		// text-align: center;
+		// position: relative;
+		background: #970d0d;
 	}
 }
 
-.Controls {
-	background: darkmagenta;
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
-	position: absolute;
-	bottom: 0;
-	
-	button {
-		width: 50px;
-		height: 50px;
-		font-size: 2em;
-		line-height: 1;
-		background:inherit;
-		border: none;
-		color: inherit;
-		
-		&:disabled {
-			background: darken(darkmagenta, 5%);
-			color: darken(white, 30%);
-		}
-	}
-}

@@ -1,12 +1,14 @@
 import React from 'react';
 import './index.scss'
-// import Tables from './components/Tables/Tables'
-import Round from './components/Round/Round'
+// import Round from './components/Round/Round'
+import Intro from './components/Intro/Intro'
 
 function App() {
 	return (
-		// <Tables />
-		<Round />
+		<div className='App'>
+			<Intro />
+			{/* <Round /> */}
+		</div>
 	);
 }
 
