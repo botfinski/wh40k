@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Intro.scss';
 import Button from '../Button/Button'
-import Input from '../Input/Input'
+// import Input from '../Input/Input'
+import SetPlayers from './SetPlayers/SetPlayers';
+import PickArmies from './PickArmies/PickArmies'
 
 const Intro = () => {
 	const [players, setPlayers] = useState({
@@ -22,19 +24,14 @@ const Intro = () => {
 		<div className='flex'>
 			<h2 className='step-header'>Set players</h2>
 			<div className='Intro content'>
-				<Input
-					id='player1'
-					label='Player 1 name'
-					value={players.player1}
-					changed={e => setPlayers({ ...players, [e.target.id]: e.target.value })}
-				/>
+				{
+					step === 0 ? <SetPlayers players={players} setPlayers={setPlayers} /> : null
+				}
 
-				<Input
-					id='player2'
-					label='Player 2 name'
-					value={players.player2}
-					changed={e => setPlayers({ ...players, [e.target.id]: e.target.value })}
-				/>
+				{
+					step === 1 ? <PickArmies /> : null
+				}
+
 			</div>
 			<Button
 				text='Next &#8250;'
