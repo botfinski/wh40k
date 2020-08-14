@@ -1,57 +1,48 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './Intro.scss';
 import Button from '../Button/Button'
+import Input from '../Input/Input'
 
 const Intro = () => {
+	const [players, setPlayers] = useState({
+		player1: '',
+		player2: ''
+	})
 
-	const input1 = useRef(null);
-	const input2 = useRef(null);
-	let [disabled, setDisabled] = useState(true);
+	const [step, setStep] = useState(0)
 
+	const isDisabled = Boolean(players.player1) && Boolean(players.player2) ? false : true
 
-	const inputChange = () => {
-		console.log(Boolean(input1.current.value))
-		console.log(Boolean(input2.current.value))
-
-		if (Boolean(input1.current.value) && Boolean(input2.current.value)) {
-			setDisabled(false)
-		}
+	const nextClicked = () => {
+		// console.log('next')
+		setStep(step + 1)
 	}
-
-	const Input = ({ label, id, changed, inputRef }) => {
-		return (
-			<div className='Input'>
-				<label htmlFor={id}>{label}</label>
-				<input type="text" id={id} maxLength='50' onChange={changed} ref={inputRef} />
-			</div>
-		)
-	}
-
 
 	return (
 		<div className='flex'>
 			<h2 className='step-header'>Set players</h2>
 			<div className='Intro content'>
 				<Input
-					label='Player 1 name'
 					id='player1'
-					changed={inputChange}
-					inputRef={input1}
+					label='Player 1 name'
+					value={players.player1}
+					changed={e => setPlayers({ ...players, [e.target.id]: e.target.value })}
 				/>
+
 				<Input
-					label='Player 2 name'
 					id='player2'
-					changed={inputChange}
-					inputRef={input2}
+					label='Player 2 name'
+					value={players.player2}
+					changed={e => setPlayers({ ...players, [e.target.id]: e.target.value })}
 				/>
 			</div>
 			<Button
 				text='Next &#8250;'
-				// clicked={aaa}
-				disabled={disabled}
+				clicked={nextClicked}
+				disabled={isDisabled}
 			/>
 		</div>
-	)
+	);
 }
 
 export default Intro;
