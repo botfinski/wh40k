@@ -6,25 +6,11 @@ const aaa = e => {
 }
 
 
-const ArmySelect = ({ playerName, names, armiesData }) => {
-	return (
-		<div className='Select'>
-			<p>{playerName}</p>
-			<select onInput={aaa} defaultValue='---'>
-				<option value='---' disabled>---</option>
-				{
-					Object.values(armiesData).map(army => Object.keys(army).map(key => <option key={key} value={key}>{army[key].name}</option>))
-				}
-			</select>
-		</div>
-	)
-}
 
 const PickArmies = ({ players, armiesData }) => {
-	let armiesNames = []
-	Object.values(armiesData).map(army => Object.values(army).map(keys => armiesNames.push(keys.name)))
-	// console.log(armiesNames)
-	// Object.values(armiesData).map(army => console.log(Object.keys(army)))
+	let armies = []
+	armiesData.map(army => armies.push(army))
+
 
 
 
@@ -33,15 +19,39 @@ const PickArmies = ({ players, armiesData }) => {
 
 			// console.log(player)
 			return (
-				<ArmySelect
-					playerName={player.name}
-					key={index}
-					// names={armiesNames} 
-					armiesData={armiesData}
-				/>
+				<>
+					<p>{player.name}</p>
+					<select onInput={aaa}>
+						{
+							armies.map(army => <option value={army.slug}>{army.name}</option>)
+						}
+					</select>
+				</>
 			)
 		})
 	)
 }
 
 export default PickArmies;
+
+
+
+
+
+// const ArmySelect = ({ playerName, names, armiesData }) => {
+	// 	return (
+	// 		<p>aaa</p>
+	// 	)
+
+	// 	// return (
+	// 	// 	<div className='Select'>
+	// 	// 		<p>{playerName}</p>
+	// 	// 		<select onInput={aaa} defaultValue='---'>
+	// 	// 			<option value='---' disabled>---</option>
+	// 	// 			{
+	// 	// 				Object.values(armiesData).map(army => Object.keys(army).map(key => <option key={key} value={key}>{army[key].name}</option>))
+	// 	// 			}
+	// 	// 		</select>
+	// 	// 	</div>
+	// 	// )
+	// }
