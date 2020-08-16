@@ -1,17 +1,18 @@
 import React from 'react';
 
 
-const aaa = e => {
-	console.dir(e.target.value)
-}
-
-
-
 const PickArmies = ({ players, armiesData }) => {
 	let armies = []
 	armiesData.map(army => armies.push(army))
 
+	console.log(armies)
 
+	const selected = e => {
+		console.dir(e.target.value)
+
+		armies = armies.filter(army => army.slug !== e.target.value)
+		console.log(armies)
+	}
 
 
 	return (
@@ -21,7 +22,8 @@ const PickArmies = ({ players, armiesData }) => {
 			return (
 				<>
 					<p>{player.name}</p>
-					<select onInput={aaa}>
+					<select onInput={selected} defaultValue='Pick Army'>
+						<option disabled value='Pick Army'>Pick Army</option>
 						{
 							armies.map(army => <option value={army.slug}>{army.name}</option>)
 						}

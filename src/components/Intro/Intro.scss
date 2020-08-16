@@ -14,7 +14,11 @@
 		padding: $gutterSize;
 	}
 
+	// select, option {
+	// 	width: 100%;
+	// }
+
 	option:disabled {
-		background: darkred;
+		background: lightcoral;
 	}
 }
