@@ -1,59 +1,41 @@
 import React from 'react';
+import Input from '../../Input/Input'
 
 
-const PickArmies = ({ players, armiesData }) => {
-	let armies = []
-	armiesData.map(army => armies.push(army))
+const PickArmies = ({ players, armiesData, setPlayers, player }) => {
+	// let armies = []
+	// armiesData.map(army => armies.push(army))
 
-	console.log(armies)
-
-	const selected = e => {
-		console.dir(e.target.value)
-
-		armies = armies.filter(army => army.slug !== e.target.value)
-		console.log(armies)
-	}
+	// console.log(player)
+	// console.log(players)
+	console.log(player)
 
 
 	return (
-		Object.values(players).map((player, index) => {
+		<>
+			<p>{players[player].name}</p>
 
-			// console.log(player)
-			return (
-				<>
-					<p>{player.name}</p>
-					<select onInput={selected} defaultValue='Pick Army'>
-						<option disabled value='Pick Army'>Pick Army</option>
-						{
-							armies.map(army => <option value={army.slug}>{army.name}</option>)
-						}
-					</select>
-				</>
-			)
-		})
+			{
+				armiesData.map((army) => (
+					<Input
+						key={army.slug}
+						type='checkbox'
+						id={army.slug}
+						label={army.name}
+						changed={e => setPlayers({
+							...players,
+							[player]: {
+								...players[player],
+								army: army.slug
+							}
+						})}
+
+						value={army.slug}
+					/>
+				))
+			}
+		</>
 	)
 }
 
 export default PickArmies;
-
-
-
-
-
-// const ArmySelect = ({ playerName, names, armiesData }) => {
-	// 	return (
-	// 		<p>aaa</p>
-	// 	)
-
-	// 	// return (
-	// 	// 	<div className='Select'>
-	// 	// 		<p>{playerName}</p>
-	// 	// 		<select onInput={aaa} defaultValue='---'>
-	// 	// 			<option value='---' disabled>---</option>
-	// 	// 			{
-	// 	// 				Object.values(armiesData).map(army => Object.keys(army).map(key => <option key={key} value={key}>{army[key].name}</option>))
-	// 	// 			}
-	// 	// 		</select>
-	// 	// 	</div>
-	// 	// )
-	// }

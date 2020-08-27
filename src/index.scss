@@ -62,8 +62,21 @@ div {
 	justify-content: center;
 }
 
-.step-header {
-	align-self: flex-start;
-	text-align: center;
+header {
+	display: flex;
+
+	.step-header {
+		align-self: flex-start;
+		text-align: center;
+		flex-grow: 1;
+	}
 }
+
+
+
+// .prev-button {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// }
 
