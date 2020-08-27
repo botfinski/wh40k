@@ -8,13 +8,11 @@ const PickArmies = ({ players, armiesData, setPlayers, player }) => {
 
 	// console.log(player)
 	// console.log(players)
-	console.log(player)
+	// console.log(player)
 
 
 	return (
 		<>
-			<p>{players[player].name}</p>
-
 			{
 				armiesData.map((army) => (
 					<Input
@@ -29,8 +27,8 @@ const PickArmies = ({ players, armiesData, setPlayers, player }) => {
 								army: army.slug
 							}
 						})}
-
 						value={army.slug}
+						checked={false}
 					/>
 				))
 			}

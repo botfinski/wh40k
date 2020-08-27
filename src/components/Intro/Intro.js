@@ -20,7 +20,11 @@ const Intro = ({ armiesData }) => {
 
 	const isDisabled = Boolean(players.player1.name) && Boolean(players.player2.name) ? false : true
 
-	const headers = ['Set names', `${players.player1.name} pick`, `${players.player2.name} pick`]
+	const headers = [
+		'Set names',
+		`${players.player1.name} pick`,
+		`${players.player2.name} pick`
+	]
 
 	const nextClicked = () => {
 		setStep(step + 1)
@@ -30,16 +34,12 @@ const Intro = ({ armiesData }) => {
 		setStep(step - 1)
 	}
 
+	// console.log(headers[step])
 
 
 	return (
 		<div className='flex'>
 			<header>
-				<Button
-					text='&lsaquo;'
-					clicked={prevClicked}
-					className={'prev-button'}
-				/>
 				<h2 className='step-header'>{headers[step]}</h2>
 			</header>
 
@@ -70,11 +70,20 @@ const Intro = ({ armiesData }) => {
 				}
 
 			</div>
-			<Button
-				text='Next &rsaquo;'
-				clicked={nextClicked}
-				disabled={isDisabled}
-			/>
+			<footer>
+				<Button
+					text='&lsaquo;'
+					clicked={prevClicked}
+					className={'prev-button'}
+					disabled={step === 0 ? true : false}
+				/>
+				<Button
+					text='Next &rsaquo;'
+					clicked={nextClicked}
+					disabled={isDisabled}
+					className={'next-button'}
+				/>
+			</footer>
 		</div>
 	);
 }
